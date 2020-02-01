@@ -233,6 +233,8 @@ class ArgInfo(object):
                 self.tp = "std::vector<cv::Mat>&"
             elif self.inputarg:
                 self.tp = "const std::vector<cv::Mat>&"
+        if self.tp == 'SimpleBlobDetector_Params':
+            self.tp = "SimpleBlobDetector::Params"
         self.tp = handle_vector(self.tp).strip()
         if self.const:
             self.tp = "const " + self.tp
